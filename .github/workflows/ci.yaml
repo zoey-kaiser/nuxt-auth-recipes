@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [mocking-with-vitest]
+  push:
+    branches: [mocking-with-vitest]
+
+env:
+  NODE_VER: 22.5
+
+jobs:
+  lint-and-typecheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+
+      - name: Use Node.js ${{ env.NODE_VER }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VER }}
+          cache: 'pnpm'
+
+      - run: pnpm i
+      - run: pnpm lint
+      - run: pnpm typecheck
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+
+      - name: Use Node.js ${{ env.NODE_VER }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VER }}
+          cache: 'pnpm'
+
+      - run: pnpm i
+      - run: pnpm test
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+
+      - name: Use Node.js ${{ env.NODE_VER }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VER }}
+          cache: 'pnpm'
+
+      - run: pnpm i
+      - run: pnpm build
