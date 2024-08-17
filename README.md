@@ -1,15 +1,51 @@
-# Recipes
+# my-sidebase-undertaking-app
 
-The following pages contain recipes for commonly asked patterns, questions, and implementations. The recipes are mostly provided by the community and can serve as guidelines to implement something similar in your Nuxt 3 application.
+This is a [sidebase merino](https://sidebase.io/) app created by running `pnpm create sidebase@latest`. This project uses the following technologies for a great developer- and user-experience:
+- [TypeScript](https://www.typescriptlang.org/)
+- [Nuxt 3](https://nuxt.com)
+- nuxt-auth
+- Linting via ESLint and @antfu/eslint-config
 
-## What are recipes?
+## How to get going?
 
-Recipes are short guides provided by the community and our team that outline how to use `@sidebase/nuxt-auth` in specific use cases required by your application. 
+This is a straight-forward setup with minimal templating and scaffolding. The options you selected during the sidebase CLI setup are all here though. Good places to continue reading are:
+- [the First Steps documentation](https://sidebase.io/sidebase/usage)
+- [our discord](https://discord.gg/auc8eCeGzx)
 
-Recipes are not meant to act as official documentation and should be primarily used as inspiration to customize `@sidebase/nuxt-auth` to your needs. 
+Some tasks you should probably do in the beginning are:
+- [ ] replace this generic README with a more specific one
+- [ ] install the Vue Volar extension
+- [ ] enable [Volar takeover mode](https://nuxt.com/docs/getting-started/installation#prerequisites) to ensure a smooth editor setup
+- [ ] [install Nuxt 3 devtools](https://github.com/nuxt/devtools#installation) if you want to use them
+- [ ] Auth: Configure your auth providers to the [NuxtAuthHandler](./server/api/auth/[...].ts)
+- [ ] Auth, optional: Enable global protection by setting `enableGlobalAppMiddleware: true` in [your nuxt.config.ts](./nuxt.config.ts). Delete the local middleware in the [protected.vue](./pages/protected.vue) page if you do
 
-## Inside this repository
+### Setup
 
-This repository contains recipes for [`@sidebase/nuxt-auth`](https://auth.sidebase.io/) created by Zoey Kaiser. Each branch contains a different recipe, you can read more about each recipe [here](https://auth.sidebase.io/recipes/introduction/welcome).
+Make sure to install the dependencies:
 
-No new recipes created by community members will be added to this collection, however, I appreciate any pull requests that fix any issues inside the recipes or update packages!
+```bash
+pnpm install
+```
+
+### Development Server
+
+Start the development server on http://localhost:3000
+
+```bash
+pnpm run dev
+```
+
+### Production
+
+Build the application for production:
+
+```bash
+pnpm run build
+```
+
+Locally preview production build:
+
+```bash
+pnpm run preview
+```

@@ -1,55 +1,24 @@
-# Dependencies
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
 node_modules
 
 # Logs
-*.log*
+logs
+*.log
 
-# Temp directories
-.temp
-.tmp
-.cache
-
-# Yarn
-**/.yarn/cache
-**/.yarn/*state*
-
-# Generated dirs
-dist
-
-# Nuxt
-.nuxt
-.output
-.vercel_build_output
-.build-*
-.env
-.netlify
-
-# Env
-.env
-
-# Testing
-reports
-coverage
-*.lcov
-.nyc_output
-
-# VSCode
-.vscode
-
-# Intellij idea
-*.iml
+# Misc
+.DS_Store
+.fleet
 .idea
 
-# OSX
-.DS_Store
-.AppleDouble
-.LSOverride
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-## Vite Press related
-docs/.vitepress/cache
-docs/.vitepress/dist
+# Local env files
+.env
+.env.*
+!.env.example
